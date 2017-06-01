@@ -116,33 +116,7 @@ public class AddressBookDAOImplementation implements AddressBookDAO{
         return dlm;
     }
     
-     public DefaultListModel getSearchNames(NameListPanel namePanel,String strname) 
-    {
-        String search;     
-        DefaultListModel<String> dlm = new DefaultListModel<>();
-            try {
-         conn = DBConnection.getInstance().getConnect();
-         search=strname;
-            Statement stmt;
-                 stmt = conn.createStatement();
-            String qry = "select * from AddressBook where name like'" + strname +"%'";
-                 try (ResultSet rs = stmt.executeQuery(qry)) {
-                     while (rs.next()){
-                         String name = rs.getString(1);
-                         dlm.addElement(name);
-                     }
-                     
-                     namePanel.getJList().setModel(dlm);
-                 }
-            stmt.close();
-           conn.close();
-        }
-           catch (SQLException ex) {
-                   System.out.println(ex+"NO Records/Cannot retrieve records");
-                   }
-           
-        return dlm;
-    }
+    
     
     public void getSelectedName(DetailViewPanel detailPanel,String selectedName)
     {

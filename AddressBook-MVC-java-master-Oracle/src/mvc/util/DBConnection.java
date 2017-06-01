@@ -34,19 +34,13 @@ public class DBConnection {
             String password = prop.getProperty("password");
             String dBase = prop.getProperty("dBase");
             String url = dbUrl + dBase;
-           
-            
             //Class.forName(driver);
             //String connectString = url+dBase+"?user="+userName+"&password="+password;
-            //conn = DriverManager.getConnection(dbURL, username, password);
-           // con = DriverManager.getConnection(url,userName,password);
-           
-                   
-            //con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase",user,pass);
+            //conn = DriverManager.getConnection(dbURL2, username, password);
             con = DriverManager.getConnection(url,userName,password);
            /*if(!con.isClosed())
                 System.out.println("Connected to RDBMS");*/
-        }catch(Exception e){
+        }catch(Throwable e){
             e.printStackTrace();
         }
         

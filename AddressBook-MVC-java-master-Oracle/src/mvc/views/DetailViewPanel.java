@@ -11,7 +11,7 @@ import javax.swing.JComponent;
  *
  * @author Bharathy KGiSL
  */
- public class DetailViewPanel extends javax.swing.JPanel {
+public class DetailViewPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form NewJPanel

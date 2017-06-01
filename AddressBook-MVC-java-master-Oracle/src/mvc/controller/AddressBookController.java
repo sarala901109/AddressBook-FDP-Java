@@ -58,15 +58,12 @@ public class AddressBookController {
                     openEdit();
                 else if(e.getSource() == view.getDelete())
                     openDelete();
-                else if(e.getSource() == view.getSearch())
-                    openSearch();
             }
         };
         
         view.getAdd().addActionListener(actionListener);
         view.getDelete().addActionListener(actionListener);
         view.getEdit().addActionListener(actionListener);
-        view.getSearch().addActionListener(actionListener);
       
     }
     
@@ -212,11 +209,6 @@ public class AddressBookController {
         }
     }
     
-    private void openSearch() {
-        String str =JOptionPane.showInputDialog(null,"Enter search string : ","Address Book Search",1);
-        nlp =view.getNameListPanel();
-        daoimplement.getSearchNames(nlp,str);
-    }
     public void loadPersons()       
     {
         nlp = view.getNameListPanel();
@@ -250,7 +242,6 @@ public class AddressBookController {
          detailPanel.getCityField().setEditable(false);
         }
     }  //loadPersons ends
-    
     
     public void getSelectedPerson(String selectedName)
     {
